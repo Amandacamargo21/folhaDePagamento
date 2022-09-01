@@ -1,0 +1,19 @@
+### Listar o usuário 
+
+GET https://localhost:5001/api/funcionario/listar
+
+### Buscar o usuário 
+
+GET https://localhost:5001/api/funcionario/buscar/amandaCPF
+
+
+### Cadastrar funcionarios
+
+POST https://localhost:5001/api/funcionario/cadastrar
+Content-Type: application/json
+
+{
+  "nome": "amanda@camargo.com",
+  "cpf": "amanda",
+  "nascimento": "07/03/1996"
+}
