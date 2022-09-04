@@ -45,16 +45,15 @@ namespace FolhaDePagamento.FuncionarioControler
             return Created("", funcionarios);
         }
 
-        public IActionResult Deletar([FromBody] Funcionario funcionario)
-        {
-            Funcionario CPF = Funcionario.Get(CPF);
-            if (!CPF)
-            {
-                throw new HttpResponseException(HttpStatusCode.NotFound);
-            }
+        // DELETE: /api/funcionario/deletar/123
+        [Route("deletar/{cpf}")]
+        [HttpDelete]
 
-            repository.Remove(Funcionario);
+        public IActionResult Deletar([FromRoute] string cpf)
+        {
+            return NotFound();
         }
+
 
         public IActionResult Atualizar(int id, Product product)
         {
